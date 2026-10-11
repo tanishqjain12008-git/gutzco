@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the brand experience on one scrolling home route and purchasing on a separate checkout route, because navigation must scroll within the story while checkout has its own flow.
+- Use shared pure shop rules for checkout pricing and delivery validation, because totals and validation must remain consistent and testable.
+- Keep demo purchasing in React state without storing personal details or collecting payment credentials, because this project is a demonstration and not a live store.
+- Reference uploaded media through Lovable Assets pointers and retain the original video unchanged, because media quality and lightweight source history must be preserved.
