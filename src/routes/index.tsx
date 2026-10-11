@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUpRight, Check, Pause, Play, Sparkles, Heart, MoveRight
 import { Button } from "@/components/ui/button";
 import { BrandLogo, Footer, GutMascot } from "@/components/brand";
 import hero from "@/assets/hero.mp4.asset.json";
+import compatibleHero from "@/assets/hero.webm.asset.json";
 import poster from "@/assets/poster.jpg.asset.json";
 import product from "@/assets/product.png.asset.json";
 
@@ -30,7 +31,7 @@ function Index() {
   function toggleVideo() { const el = video.current; if (!el) return; if (el.paused) { void el.play().then(() => setPlaying(true)).catch(() => setPlaying(false)); } else { el.pause(); setPlaying(false); } }
   return <main>
     <section className="hero-section">
-      <video ref={video} className="hero-video" src={hero.url} poster={poster.url} autoPlay muted loop playsInline preload="auto" aria-label="Gutz elixir product film" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
+      <video ref={video} className="hero-video" poster={poster.url} autoPlay muted loop playsInline preload="auto" aria-label="Gutz elixir product film" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}><source src={compatibleHero.url} type="video/webm" /><source src={hero.url} type="video/mp4" /></video>
       <div className="hero-wash" />
       <nav className="hero-nav" aria-label="Main navigation"><a href="#our-story">Our story <span>↗</span></a><Link to="/" aria-label="Gutz home"><BrandLogo /></Link><a href="#product">The good stuff <span>↗</span></a></nav>
       <div className="hero-copy"><div className="eyebrow"><span className="tiny-star">✦</span> YOUR GUT’S NEW PLUS ONE</div><h1>GUTZ<span className="heading-dot">.</span></h1><h2>Good gut.<br />Great vibes.</h2><p>A little can with a big gut feeling.<br />Meet your new feel-good ritual.</p><Button asChild variant="brand" size="lg"><Link to="/checkout">Get your Gutz <ArrowUpRight /></Link></Button><div className="hero-small">100 ml of good energy. Zero boring.</div></div>
