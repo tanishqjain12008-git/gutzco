@@ -43,12 +43,13 @@ h1,h2,h3,p { margin: 0; } h1,h2,h3 { font-family: var(--font-display); letter-sp
 .hero-section { position: relative; height: min(850px, 94svh); min-height: 680px; overflow: hidden; background: var(--secondary); }
 .hero-video { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: 63% center; }
 .hero-wash { position: absolute; inset: 0; background: linear-gradient(90deg, var(--hero-shade), transparent 61%); }
-.hero-nav { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); display: grid; grid-template-columns: 1fr 150px 1fr; align-items: center; width: min(690px, 92%); gap: 30px; text-align: center; z-index: 2; padding: 12px 30px; border-radius: 36px; background: linear-gradient(180deg, oklch(.2 .045 282 / 88%), oklch(.24 .05 282 / 74%)); -webkit-backdrop-filter: blur(16px) saturate(1.15); backdrop-filter: blur(16px) saturate(1.15); border: 1px solid oklch(.98 .008 90 / 16%); box-shadow: 0 20px 45px oklch(.15 .04 282 / 35%); }
-.hero-nav .brand-logo { width: 150px; height: 150px; }
-.hero-nav a:not(:nth-child(2)) { font-size: 14px; font-weight: 600; white-space: nowrap; color: var(--background); letter-spacing: .5px; }
+.hero-section::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(58% 46% at 50% -6%, oklch(.16 .045 282 / 76%), oklch(.16 .045 282 / 40%) 46%, oklch(.16 .045 282 / 10%) 76%, transparent 100%), linear-gradient(180deg, oklch(.16 .045 282 / 34%), transparent 18%); }
+.hero-nav { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); display: grid; grid-template-columns: 1fr 150px 1fr; align-items: center; width: min(690px, 92%); gap: 30px; text-align: center; z-index: 2; }
+.hero-nav .brand-logo { width: 150px; height: 150px; -webkit-mask-image: radial-gradient(closest-side, #000 66%, rgba(0,0,0,.72) 82%, transparent 96%); mask-image: radial-gradient(closest-side, #000 66%, rgba(0,0,0,.72) 82%, transparent 96%); }
+.hero-nav a:not(:nth-child(2)) { font-size: 14px; font-weight: 600; white-space: nowrap; color: var(--background); letter-spacing: .5px; text-shadow: 0 2px 16px oklch(.16 .045 282 / 65%); }
 .hero-nav a span { margin-left: 10px; color: var(--sun); }
 .hero-nav a:not(:nth-child(2)):hover { color: var(--sun); text-decoration: underline; text-decoration-color: var(--coral); text-underline-offset: 6px; }
-.hero-copy { position: absolute; top: 25%; left: 6.2%; max-width: 460px; animation: rise 1s ease both; }
+.hero-copy { position: absolute; top: 25%; left: 6.2%; max-width: 460px; z-index: 2; animation: rise 1s ease both; }
 .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
 .tiny-star { color: var(--teal); font-size: 21px; }
 .hero-copy h1 { font-size: 115px; line-height: 1.1; font-weight: 700; margin-top: 9px; }
