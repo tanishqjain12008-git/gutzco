@@ -172,7 +172,7 @@ h1,h2,h3,p { margin: 0; } h1,h2,h3 { font-family: var(--font-display); letter-sp
 .contact-copy h2 { font-size: 64px; line-height: .95; margin: 14px 0 20px; }
 .contact-copy h2 span { color: var(--coral); }
 .contact-copy p { max-width: 380px; color: var(--muted-foreground); }
-.contact-form,.contact-done { background: var(--card); border: 1px solid var(--ink); border-radius: 18px; padding: 30px; box-shadow: 6px 6px 0 var(--ink); display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+.contact-form,.contact-done { background: var(--background); border: 1px solid var(--ink); border-radius: 18px; padding: 30px; box-shadow: 6px 6px 0 var(--ink); display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
 .contact-form .field-grid { width: 100%; }
 .field textarea { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 12px 13px; font-family: inherit; font-size: 13px; background: var(--background); color: var(--foreground); resize: vertical; }
 .field textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
