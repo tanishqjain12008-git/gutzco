@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowUpRight, Check, Pause, Play, Sparkles, Heart, MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandLogo, Footer, GutMascot } from "@/components/brand";
+import { ContactSection } from "@/components/contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -46,6 +47,7 @@ function Index() {
       <div className="section-label"><span>02 / MEET YOUR NEW RITUAL</span><span>SMALL CAN. BIG MAIN-CHARACTER ENERGY.</span></div>
       <div className="product-grid reveal"><div className="product-visual"><div className="product-image-wrap"><img src={media.product} alt="100 ml Gutz prebiotic and probiotic elixir can with ginger and berries" loading="lazy" /></div><div className="product-sticker">YOUR GUT<br />CALLED.<br /><span>IT WANTS THIS.</span></div><span className="product-note">a sip in the right direction ↗</span></div><div className="product-copy"><div className="eyebrow"><Sparkles size={16} /> PREBIOTIC + PROBIOTIC ELIXIR</div><h2>Small can.<br /><span>Big Gutz.</span></h2><p className="product-lead">Your gut’s new favourite person.<br />Except it’s a drink.</p><p>A feel-good elixir with prebiotics and probiotics, made for your daily reset. All the good intentions. None of the boring.</p><div className="product-features"><span><Check /> Prebiotics + probiotics</span><span><Check /> 100 ml, ready to sip</span><span><Check /> Best served chilled</span></div><div className="product-buy"><div><strong>₹100</strong><span>/ 100 ml can</span></div><Button asChild variant="brand" size="lg"><Link to="/checkout">Buy Now <ArrowUpRight /></Link></Button></div><div className="delivery-note">A little love, delivered. Free shipping across Delhi.</div><p className="product-disclaimer">A daily wellness ritual, not a medicine. Not intended to diagnose, treat, cure or prevent any disease.</p></div></div>
     </section>
+    <ContactSection />
     <div className="closing-band"><span>GOOD TASTE.</span><GutMascot /><span>GUT INSTINCT.</span></div>
     <Footer />
   </main>;
