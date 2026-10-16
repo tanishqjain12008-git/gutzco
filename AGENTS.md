@@ -13,3 +13,4 @@
 - Use shared pure shop rules for checkout pricing and delivery validation, because totals and validation must remain consistent and testable.
 - Keep demo purchasing in React state without storing personal details or collecting payment credentials, because this project is a demonstration and not a live store.
 - Serve media from public/assets via src/lib/media.ts, because the site must also deploy outside Lovable (e.g. Vercel) with all files in the repo.
+- Build with the Vercel nitro preset when the VERCEL env var is set (vite.config.ts), because the site is also self-hosted on Vercel and the default target is Cloudflare.
