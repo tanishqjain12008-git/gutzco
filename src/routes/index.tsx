@@ -1,12 +1,9 @@
+import { media } from "@/lib/media";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowUpRight, Check, Pause, Play, Sparkles, Heart, MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandLogo, Footer, GutMascot } from "@/components/brand";
-import hero from "@/assets/hero.mp4.asset.json";
-import compatibleHero from "@/assets/hero.webm.asset.json";
-import poster from "@/assets/poster.jpg.asset.json";
-import product from "@/assets/product.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -31,7 +28,7 @@ function Index() {
   function toggleVideo() { const el = video.current; if (!el) return; if (el.paused) { void el.play().then(() => setPlaying(true)).catch(() => setPlaying(false)); } else { el.pause(); setPlaying(false); } }
   return <main>
     <section className="hero-section">
-      <video ref={video} className="hero-video" poster={poster.url} autoPlay muted loop playsInline preload="auto" aria-label="Gutz elixir product film" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}><source src={compatibleHero.url} type="video/webm" /><source src={hero.url} type="video/mp4" /></video>
+      <video ref={video} className="hero-video" poster={media.poster} autoPlay muted loop playsInline preload="auto" aria-label="Gutz elixir product film" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}><source src={media.heroWebm} type="video/webm" /><source src={media.heroMp4} type="video/mp4" /></video>
       <div className="hero-wash" />
       <nav className="hero-nav" aria-label="Main navigation"><a href="#our-story">Our story <span>↗</span></a><Link to="/" aria-label="Gutz home"><BrandLogo /></Link><a href="#product">The good stuff <span>↗</span></a></nav>
       <div className="hero-copy"><div className="eyebrow"><span className="tiny-star">✦</span> YOUR GUT’S NEW PLUS ONE</div><h1>GUTZ<span className="heading-dot">.</span></h1><h2>Good gut.<br />Great vibes.</h2><p>A little can with a big gut feeling.<br />Meet your new feel-good ritual.</p><Button asChild variant="brand" size="lg"><Link to="/checkout">Get your Gutz <ArrowUpRight /></Link></Button><div className="hero-small">100 ml of good energy. Zero boring.</div></div>
@@ -47,7 +44,7 @@ function Index() {
     </section>
     <section className="product-section" id="product">
       <div className="section-label"><span>02 / MEET YOUR NEW RITUAL</span><span>SMALL CAN. BIG MAIN-CHARACTER ENERGY.</span></div>
-      <div className="product-grid reveal"><div className="product-visual"><div className="product-image-wrap"><img src={product.url} alt="100 ml Gutz prebiotic and probiotic elixir can with ginger and berries" loading="lazy" /></div><div className="product-sticker">YOUR GUT<br />CALLED.<br /><span>IT WANTS THIS.</span></div><span className="product-note">a sip in the right direction ↗</span></div><div className="product-copy"><div className="eyebrow"><Sparkles size={16} /> PREBIOTIC + PROBIOTIC ELIXIR</div><h2>Small can.<br /><span>Big Gutz.</span></h2><p className="product-lead">Your gut’s new favourite person.<br />Except it’s a drink.</p><p>A feel-good elixir with prebiotics and probiotics, made for your daily reset. All the good intentions. None of the boring.</p><div className="product-features"><span><Check /> Prebiotics + probiotics</span><span><Check /> 100 ml, ready to sip</span><span><Check /> Best served chilled</span></div><div className="product-buy"><div><strong>₹100</strong><span>/ 100 ml can</span></div><Button asChild variant="brand" size="lg"><Link to="/checkout">Buy Now <ArrowUpRight /></Link></Button></div><div className="delivery-note">A little love, delivered. Free shipping across Delhi.</div><p className="product-disclaimer">A daily wellness ritual, not a medicine. Not intended to diagnose, treat, cure or prevent any disease.</p></div></div>
+      <div className="product-grid reveal"><div className="product-visual"><div className="product-image-wrap"><img src={media.product} alt="100 ml Gutz prebiotic and probiotic elixir can with ginger and berries" loading="lazy" /></div><div className="product-sticker">YOUR GUT<br />CALLED.<br /><span>IT WANTS THIS.</span></div><span className="product-note">a sip in the right direction ↗</span></div><div className="product-copy"><div className="eyebrow"><Sparkles size={16} /> PREBIOTIC + PROBIOTIC ELIXIR</div><h2>Small can.<br /><span>Big Gutz.</span></h2><p className="product-lead">Your gut’s new favourite person.<br />Except it’s a drink.</p><p>A feel-good elixir with prebiotics and probiotics, made for your daily reset. All the good intentions. None of the boring.</p><div className="product-features"><span><Check /> Prebiotics + probiotics</span><span><Check /> 100 ml, ready to sip</span><span><Check /> Best served chilled</span></div><div className="product-buy"><div><strong>₹100</strong><span>/ 100 ml can</span></div><Button asChild variant="brand" size="lg"><Link to="/checkout">Buy Now <ArrowUpRight /></Link></Button></div><div className="delivery-note">A little love, delivered. Free shipping across Delhi.</div><p className="product-disclaimer">A daily wellness ritual, not a medicine. Not intended to diagnose, treat, cure or prevent any disease.</p></div></div>
     </section>
     <div className="closing-band"><span>GOOD TASTE.</span><GutMascot /><span>GUT INSTINCT.</span></div>
     <Footer />

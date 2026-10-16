@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Mail, Phone, Sparkles } from "lucide-react";
-import logo from "@/assets/logo.png.asset.json";
+import { media } from "@/lib/media";
 
 export function BrandLogo({ className = "" }: { className?: string }) {
-  return <img className={`brand-logo ${className}`} src={logo.url} alt="Gutz — solves gut, tastes good" />;
+  return <img className={`brand-logo ${className}`} src={media.logo} alt="Gutz — solves gut, tastes good" />;
 }
 export function Footer() {
   return <footer className="site-footer">
